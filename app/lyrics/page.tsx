@@ -64,9 +64,9 @@ Nesta selva urbana, vim para ficar.`,
   {
     id: '3',
     title: 'Luz das Estrelas',
-    artist: 'Aria Nova',
+    artist: 'Blacka',
     artistId: '3',
-    genre: 'Pop',
+    genre: 'Funk',
     content: `Olhando para a noite sem fim,
 Estrelas como diamantes, brilhando tão forte.
 Você é minha constelação, me guiando,

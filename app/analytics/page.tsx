@@ -38,8 +38,8 @@ const engagementData = [
 ];
 
 const genreGrowthData = [
-  { name: 'Pop', lastMonth: 8.2, thisMonth: 12.5 },
-  { name: 'Hip Hop', lastMonth: 10.5, thisMonth: 15.2 },
+  { name: 'Funk', lastMonth: 8.2, thisMonth: 12.5 },
+  { name: 'Sertanejo', lastMonth: 10.5, thisMonth: 15.2 },
   { name: 'Eletrônica', lastMonth: 5.3, thisMonth: 8.7 },
   { name: 'R&B', lastMonth: 3.8, thisMonth: 5.3 },
   { name: 'Alternativo', lastMonth: 4.2, thisMonth: 7.1 },
@@ -47,10 +47,10 @@ const genreGrowthData = [
 ];
 
 const regionEngagementData = [
-  { name: 'América do Norte', value: 35 },
+  { name: 'América do Sul', value: 35 },
   { name: 'Europa', value: 30 },
   { name: 'Ásia', value: 20 },
-  { name: 'América do Sul', value: 10 },
+  { name: 'América do Norte', value: 10 },
   { name: 'Austrália', value: 5 }
 ];
 

@@ -8,8 +8,12 @@ import { Toaster as SonnerToaster } from '@/components/ui/sonner';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'iVii - Plataforma de Audição Musical',
+  title: 'iVii - Biblioteca Digital de Música',
   description: 'Descubra novos talentos, músicas e letras',
+  icons: {
+    icon: 'https://cdn.prod.website-files.com/67312dfea585bda016b09804/679bd7567e80d41a68c7ef2c_FAVICON.png',
+    shortcut: 'https://cdn.prod.website-files.com/67312dfea585bda016b09804/679bd7567e80d41a68c7ef2c_FAVICON.png',
+  },
 };
 
 export default function RootLayout({

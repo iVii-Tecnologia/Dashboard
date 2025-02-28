@@ -59,12 +59,13 @@ export function Sidebar() {
     <div className="space-y-4 py-4 flex flex-col h-full bg-card text-card-foreground border-r">
       <div className="px-3 py-2 flex-1">
         <div className="flex items-center pl-3 mb-8">
-          <Music className="h-8 w-8 text-primary mr-2" />
-          <h1 className="text-2xl font-bold">
-            <span className="text-primary">i</span>
-            <span className="text-primary">V</span>
-            <span className="text-primary">ii</span>
-          </h1>
+          <Link href="/">
+            <img 
+              src="https://cdn.prod.website-files.com/67312dfea585bda016b09804/67316d711da46b92a7def12e_LOGOTIPO%20IVII.svg"
+              alt="iVii Logo"
+              className="h-8"
+            />
+          </Link>
         </div>
         <div className="space-y-1">
           {routes.map((route) => (

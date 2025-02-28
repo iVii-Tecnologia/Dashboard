@@ -30,7 +30,7 @@ export default function Dashboard() {
           />
           <StatsCard
             title="Gêneros em Alta"
-            value="Hip Hop, Eletrônica"
+            value="Funk, Sertanejo"
             icon={<TrendingUp className="h-4 w-4 text-muted-foreground" />}
             description="Baseado no crescimento"
           />

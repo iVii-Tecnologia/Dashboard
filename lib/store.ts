@@ -89,9 +89,9 @@ const mockArtists: Artist[] = [
   },
   {
     id: '3',
-    name: 'Aria Nova',
-    genre: 'Pop',
-    location: 'Londres, Reino Unido',
+    name: 'Blacka',
+    genre: 'Funk',
+    location: 'São Paulo, Brasil',
     age: 22,
     followers: 67800,
     engagement: 9.1,
@@ -209,8 +209,8 @@ const mockTracks: Track[] = [
 ];
 
 const mockGenres: Genre[] = [
-  { name: 'Pop', count: 1250, growth: 12.5 },
-  { name: 'Hip Hop', count: 980, growth: 15.2 },
+  { name: 'Funk', count: 1250, growth: 12.5 },
+  { name: 'Sertanejo', count: 980, growth: 15.2 },
   { name: 'Eletrônica', count: 870, growth: 8.7 },
   { name: 'R&B', count: 650, growth: 5.3 },
   { name: 'Alternativo', count: 520, growth: 7.1 },
@@ -218,10 +218,10 @@ const mockGenres: Genre[] = [
 ];
 
 const mockRegions: Region[] = [
-  { name: 'América do Norte', artistCount: 3200, engagement: 8.5 },
+  { name: 'América do Sul', artistCount: 3200, engagement: 8.5 },
   { name: 'Europa', artistCount: 2800, engagement: 7.9 },
   { name: 'Ásia', artistCount: 2100, engagement: 9.2 },
-  { name: 'América do Sul', artistCount: 1500, engagement: 8.1 },
+  { name: 'América do Norte', artistCount: 1500, engagement: 8.1 },
   { name: 'Austrália', artistCount: 950, engagement: 7.6 },
   { name: 'África', artistCount: 1200, engagement: 8.8 },
 ];
