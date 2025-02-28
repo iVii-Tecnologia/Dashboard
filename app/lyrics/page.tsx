@@ -205,7 +205,7 @@ export default function LyricsPage() {
                   <SelectValue placeholder="Genre" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Genres</SelectItem>
+                  <SelectItem value="all">All Genres</SelectItem>
                   {genres.map(genre => (
                     <SelectItem key={genre} value={genre}>{genre}</SelectItem>
                   ))}
