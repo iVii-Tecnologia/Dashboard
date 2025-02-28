@@ -17,24 +17,24 @@ import {
 } from "@/components/ui/select";
 import { useStore } from "@/lib/store";
 
-// Mock lyrics data
+// Dados simulados de letras
 const lyrics = [
   {
     id: '1',
-    title: 'Electric Dreams',
+    title: 'Sonhos Elétricos',
     artist: 'Luna Ray',
     artistId: '1',
-    genre: 'Electronic',
-    content: `Neon lights in the midnight sky,
-Electricity running through my veins.
-Digital heartbeats, we're alive,
-In this world we've created, nothing's the same.
+    genre: 'Eletrônica',
+    content: `Luzes de neon no céu da meia-noite,
+Eletricidade correndo pelas minhas veias.
+Batidas digitais, estamos vivos,
+Neste mundo que criamos, nada é igual.
 
-[Chorus]
-Electric dreams, they're taking over,
-Electric dreams, we're falling deeper.
-Electric dreams, they're never over,
-In this digital world, we're the dreamers.`,
+[Refrão]
+Sonhos elétricos, estão tomando conta,
+Sonhos elétricos, estamos caindo mais fundo.
+Sonhos elétricos, eles nunca acabam,
+Neste mundo digital, somos os sonhadores.`,
     likes: 1245,
     views: 5280,
     isTrending: true,
@@ -42,20 +42,20 @@ In this digital world, we're the dreamers.`,
   },
   {
     id: '2',
-    title: 'City Lights',
+    title: 'Luzes da Cidade',
     artist: 'Marcus Vibe',
     artistId: '2',
     genre: 'Hip Hop',
-    content: `Streets alive with the rhythm of the night,
-Hustlers moving, trying to make it right.
-City lights shine down on the concrete dreams,
-Nothing is ever exactly what it seems.
+    content: `Ruas vivas com o ritmo da noite,
+Pessoas em movimento, tentando fazer dar certo.
+Luzes da cidade brilham sobre sonhos de concreto,
+Nada é exatamente o que parece.
 
-[Chorus]
-City lights, guiding me home,
-City lights, I'm never alone.
-Through the darkness, they show me the way,
-In this urban jungle, I'm here to stay.`,
+[Refrão]
+Luzes da cidade, me guiando para casa,
+Luzes da cidade, nunca estou sozinho.
+Através da escuridão, elas me mostram o caminho,
+Nesta selva urbana, vim para ficar.`,
     likes: 987,
     views: 3150,
     isTrending: false,
@@ -63,20 +63,20 @@ In this urban jungle, I'm here to stay.`,
   },
   {
     id: '3',
-    title: 'Starlight',
+    title: 'Luz das Estrelas',
     artist: 'Aria Nova',
     artistId: '3',
     genre: 'Pop',
-    content: `Gazing up at the endless night,
-Stars like diamonds, shining so bright.
-You're my constellation, guiding me through,
-Under this starlight, I'm falling for you.
+    content: `Olhando para a noite sem fim,
+Estrelas como diamantes, brilhando tão forte.
+Você é minha constelação, me guiando,
+Sob esta luz estelar, estou me apaixonando por você.
 
-[Chorus]
-Starlight, starlight, illuminate the way,
-Starlight, starlight, please promise to stay.
-When darkness surrounds me and I lose my sight,
-I'll always find you, my guiding starlight.`,
+[Refrão]
+Luz estelar, luz estelar, ilumine o caminho,
+Luz estelar, luz estelar, prometa ficar.
+Quando a escuridão me rodeia e perco minha visão,
+Sempre te encontrarei, minha luz guia.`,
     likes: 2156,
     views: 8720,
     isTrending: true,
@@ -84,20 +84,20 @@ I'll always find you, my guiding starlight.`,
   },
   {
     id: '4',
-    title: 'Midnight Soul',
+    title: 'Alma da Meia-noite',
     artist: 'Rhythm Collective',
     artistId: '4',
     genre: 'R&B',
-    content: `Midnight whispers, secrets of the soul,
-Emotions running deep, taking their toll.
-Velvet melodies, smooth as can be,
-This midnight soul is setting me free.
+    content: `Sussurros da meia-noite, segredos da alma,
+Emoções profundas, cobrando seu preço.
+Melodias de veludo, suaves como podem ser,
+Esta alma da meia-noite está me libertando.
 
-[Chorus]
-Midnight soul, rhythm of the heart,
-Midnight soul, tearing me apart.
-These feelings inside, they're taking control,
-Can't fight the power of this midnight soul.`,
+[Refrão]
+Alma da meia-noite, ritmo do coração,
+Alma da meia-noite, me despedaçando.
+Estes sentimentos dentro, estão tomando controle,
+Não posso lutar contra o poder desta alma da meia-noite.`,
     likes: 873,
     views: 2980,
     isTrending: false,
@@ -105,20 +105,20 @@ Can't fight the power of this midnight soul.`,
   },
   {
     id: '5',
-    title: 'Echoes of Tomorrow',
+    title: 'Ecos do Amanhã',
     artist: 'Echo Wave',
     artistId: '5',
-    genre: 'Alternative',
-    content: `Fragments of the future, echoing today,
-Visions of what's coming, leading the way.
-We're the architects of what's yet to be,
-Building the tomorrow that we want to see.
+    genre: 'Alternativo',
+    content: `Fragmentos do futuro, ecoando hoje,
+Visões do que está por vir, mostrando o caminho.
+Somos os arquitetos do que ainda está por ser,
+Construindo o amanhã que queremos ver.
 
-[Chorus]
-Echoes of tomorrow, ringing in my ears,
-Echoes of tomorrow, dissolving all my fears.
-The sound of the future is calling my name,
-Nothing will ever be quite the same.`,
+[Refrão]
+Ecos do amanhã, soando em meus ouvidos,
+Ecos do amanhã, dissolvendo todos os meus medos.
+O som do futuro está chamando meu nome,
+Nada será exatamente igual.`,
     likes: 1042,
     views: 4120,
     isTrending: true,
@@ -126,20 +126,20 @@ Nothing will ever be quite the same.`,
   },
   {
     id: '6',
-    title: 'Whispers in the Wind',
+    title: 'Sussurros ao Vento',
     artist: 'Melody Spark',
     artistId: '6',
     genre: 'Indie',
-    content: `Gentle whispers carried by the breeze,
-Secrets of nature, rustling through the trees.
-Messages of hope, floating all around,
-In these whispers, wisdom can be found.
+    content: `Suaves sussurros levados pela brisa,
+Segredos da natureza, farfalhando pelas árvores.
+Mensagens de esperança, flutuando ao redor,
+Nestes sussurros, sabedoria pode ser encontrada.
 
-[Chorus]
-Whispers in the wind, telling ancient tales,
-Whispers in the wind, when all else fails.
-Listen carefully to what they have to say,
-The wind's whispers will guide you on your way.`,
+[Refrão]
+Sussurros ao vento, contando histórias antigas,
+Sussurros ao vento, quando tudo mais falha.
+Ouça atentamente o que eles têm a dizer,
+Os sussurros do vento vão guiar seu caminho.`,
     likes: 768,
     views: 2540,
     isTrending: false,
@@ -152,10 +152,10 @@ export default function LyricsPage() {
   const [selectedLyrics, setSelectedLyrics] = useState(lyrics[0]);
   const [sortBy, setSortBy] = useState("trending");
   
-  // Get unique genres from lyrics
+  // Obter gêneros únicos das letras
   const genres = Array.from(new Set(lyrics.map(lyric => lyric.genre)));
   
-  // Filter and sort lyrics
+  // Filtrar e ordenar letras
   const filteredLyrics = lyrics.filter(lyric => {
     const matchesSearch = searchQuery === '' || 
       lyric.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -167,13 +167,13 @@ export default function LyricsPage() {
     return matchesSearch && matchesGenre;
   }).sort((a, b) => {
     if (sortBy === "trending") {
-      // Sort by trending status first, then by views
+      // Ordenar por status de tendência primeiro, depois por visualizações
       return (b.isTrending ? 1 : 0) - (a.isTrending ? 1 : 0) || b.views - a.views;
     } else if (sortBy === "popular") {
-      // Sort by likes
+      // Ordenar por curtidas
       return b.likes - a.likes;
     } else if (sortBy === "rating") {
-      // Sort by rating
+      // Ordenar por avaliação
       return b.rating - a.rating;
     }
     return 0;
@@ -182,15 +182,15 @@ export default function LyricsPage() {
   return (
     <MainLayout>
       <div className="space-y-6">
-        <h1 className="text-3xl font-bold">Lyrics Library</h1>
+        <h1 className="text-3xl font-bold">Biblioteca de Letras</h1>
         
-        {/* Filters */}
+        {/* Filtros */}
         <div className="flex flex-col md:flex-row gap-4">
           <div className="relative flex-1">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Search lyrics by title, artist, or content..."
+              placeholder="Buscar letras por título, artista ou conteúdo..."
               className="pl-8"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -202,10 +202,10 @@ export default function LyricsPage() {
               <Select value={selectedGenre} onValueChange={setSelectedGenre}>
                 <SelectTrigger>
                   <Filter className="h-4 w-4 mr-2" />
-                  <SelectValue placeholder="Genre" />
+                  <SelectValue placeholder="Gênero" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All Genres</SelectItem>
+                  <SelectItem value="all">Todos os Gêneros</SelectItem>
                   {genres.map(genre => (
                     <SelectItem key={genre} value={genre}>{genre}</SelectItem>
                   ))}
@@ -217,30 +217,30 @@ export default function LyricsPage() {
               <Select value={sortBy} onValueChange={setSortBy}>
                 <SelectTrigger>
                   <TrendingUp className="h-4 w-4 mr-2" />
-                  <SelectValue placeholder="Sort by" />
+                  <SelectValue placeholder="Ordenar por" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="trending">Trending</SelectItem>
-                  <SelectItem value="popular">Most Popular</SelectItem>
-                  <SelectItem value="rating">Highest Rated</SelectItem>
+                  <SelectItem value="trending">Em Alta</SelectItem>
+                  <SelectItem value="popular">Mais Populares</SelectItem>
+                  <SelectItem value="rating">Melhor Avaliadas</SelectItem>
                 </SelectContent>
               </Select>
             </div>
           </div>
         </div>
         
-        {/* Lyrics Content */}
+        {/* Conteúdo de Letras */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Lyrics List */}
+          {/* Lista de Letras */}
           <Card className="lg:col-span-1">
             <CardHeader className="px-4 py-3">
-              <CardTitle>Lyrics</CardTitle>
+              <CardTitle>Letras</CardTitle>
             </CardHeader>
             <CardContent className="p-0">
               <div className="divide-y">
                 {filteredLyrics.length === 0 ? (
                   <div className="py-8 text-center">
-                    <p className="text-muted-foreground">No lyrics found matching your criteria.</p>
+                    <p className="text-muted-foreground">Nenhuma letra encontrada com esses critérios.</p>
                   </div>
                 ) : (
                   filteredLyrics.map(lyric => (
@@ -259,7 +259,7 @@ export default function LyricsPage() {
                         {lyric.isTrending && (
                           <Badge variant="secondary" className="text-xs">
                             <TrendingUp className="h-3 w-3 mr-1" />
-                            Trending
+                            Em Alta
                           </Badge>
                         )}
                       </div>
@@ -278,7 +278,7 @@ export default function LyricsPage() {
             </CardContent>
           </Card>
           
-          {/* Lyrics Detail */}
+          {/* Detalhes da Letra */}
           <Card className="lg:col-span-2">
             {selectedLyrics ? (
               <>
@@ -286,7 +286,7 @@ export default function LyricsPage() {
                   <div className="flex justify-between items-start">
                     <div>
                       <CardTitle>{selectedLyrics.title}</CardTitle>
-                      <p className="text-muted-foreground mt-1">by {selectedLyrics.artist}</p>
+                      <p className="text-muted-foreground mt-1">por {selectedLyrics.artist}</p>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Button variant="outline" size="icon">
@@ -306,7 +306,7 @@ export default function LyricsPage() {
                       <Star className="h-4 w-4 mr-1 text-yellow-500" />
                       <span>{selectedLyrics.rating}/5</span>
                       <span className="mx-2">•</span>
-                      <span>{selectedLyrics.views} views</span>
+                      <span>{selectedLyrics.views} visualizações</span>
                     </div>
                   </div>
                 </CardHeader>
@@ -315,11 +315,11 @@ export default function LyricsPage() {
                     <TabsList className="grid w-full grid-cols-2">
                       <TabsTrigger value="lyrics">
                         <Mic2 className="h-4 w-4 mr-2" />
-                        Lyrics
+                        Letra
                       </TabsTrigger>
                       <TabsTrigger value="analysis">
                         <Music className="h-4 w-4 mr-2" />
-                        Analysis
+                        Análise
                       </TabsTrigger>
                     </TabsList>
                     
@@ -332,46 +332,46 @@ export default function LyricsPage() {
                     <TabsContent value="analysis" className="mt-6">
                       <div className="space-y-6">
                         <div className="p-4 border rounded-lg">
-                          <h3 className="font-medium mb-2">Theme Analysis</h3>
+                          <h3 className="font-medium mb-2">Análise Temática</h3>
                           <p className="text-muted-foreground">
-                            This song explores themes of {selectedLyrics.genre === 'Electronic' ? 'technology and digital existence' : 
-                              selectedLyrics.genre === 'Hip Hop' ? 'urban life and personal struggle' :
-                              selectedLyrics.genre === 'Pop' ? 'love and emotional connection' :
-                              selectedLyrics.genre === 'R&B' ? 'deep emotions and introspection' :
-                              selectedLyrics.genre === 'Alternative' ? 'future possibilities and human potential' :
-                              'nature and spiritual connection'
-                            }. The lyrics use vivid imagery and metaphor to convey the artist's perspective.
+                            Esta música explora temas de {selectedLyrics.genre === 'Eletrônica' ? 'tecnologia e existência digital' : 
+                              selectedLyrics.genre === 'Hip Hop' ? 'vida urbana e lutas pessoais' :
+                              selectedLyrics.genre === 'Pop' ? 'amor e conexão emocional' :
+                              selectedLyrics.genre === 'R&B' ? 'emoções profundas e introspecção' :
+                              selectedLyrics.genre === 'Alternativo' ? 'possibilidades futuras e potencial humano' :
+                              'natureza e conexão espiritual'
+                            }. A letra usa imagens vívidas e metáforas para transmitir a perspectiva do artista.
                           </p>
                         </div>
                         
                         <div className="p-4 border rounded-lg">
-                          <h3 className="font-medium mb-2">Structure</h3>
+                          <h3 className="font-medium mb-2">Estrutura</h3>
                           <div className="space-y-2">
                             <div className="flex justify-between">
-                              <span>Verses</span>
+                              <span>Versos</span>
                               <span>2</span>
                             </div>
                             <div className="flex justify-between">
-                              <span>Chorus</span>
+                              <span>Refrão</span>
                               <span>1</span>
                             </div>
                             <div className="flex justify-between">
-                              <span>Bridge</span>
+                              <span>Ponte</span>
                               <span>0</span>
                             </div>
                             <div className="flex justify-between">
-                              <span>Outro</span>
+                              <span>Final</span>
                               <span>0</span>
                             </div>
                           </div>
                         </div>
                         
                         <div className="p-4 border rounded-lg">
-                          <h3 className="font-medium mb-2">Sentiment Analysis</h3>
+                          <h3 className="font-medium mb-2">Análise de Sentimento</h3>
                           <div className="space-y-4">
                             <div>
                               <div className="flex justify-between items-center mb-1">
-                                <span>Positivity</span>
+                                <span>Positividade</span>
                                 <span>{Math.floor(Math.random() * 30) + 70}%</span>
                               </div>
                               <div className="w-full bg-muted rounded-full h-2">
@@ -380,7 +380,7 @@ export default function LyricsPage() {
                             </div>
                             <div>
                               <div className="flex justify-between items-center mb-1">
-                                <span>Energy</span>
+                                <span>Energia</span>
                                 <span>{Math.floor(Math.random() * 40) + 60}%</span>
                               </div>
                               <div className="w-full bg-muted rounded-full h-2">
@@ -389,7 +389,7 @@ export default function LyricsPage() {
                             </div>
                             <div>
                               <div className="flex justify-between items-center mb-1">
-                                <span>Complexity</span>
+                                <span>Complexidade</span>
                                 <span>{Math.floor(Math.random() * 50) + 50}%</span>
                               </div>
                               <div className="w-full bg-muted rounded-full h-2">
@@ -405,16 +405,16 @@ export default function LyricsPage() {
               </>
             ) : (
               <div className="flex flex-col items-center justify-center py-12 text-center">
-                <p className="text-muted-foreground">Select lyrics to view details.</p>
+                <p className="text-muted-foreground">Selecione uma letra para ver os detalhes.</p>
               </div>
             )}
           </Card>
         </div>
         
-        {/* Trending Lyrics */}
+        {/* Letras em Alta */}
         <Card>
           <CardHeader>
-            <CardTitle>Trending Lyrics</CardTitle>
+            <CardTitle>Letras em Alta</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -428,7 +428,7 @@ export default function LyricsPage() {
                       </div>
                       <Badge variant="secondary" className="text-xs">
                         <TrendingUp className="h-3 w-3 mr-1" />
-                        Trending
+                        Em Alta
                       </Badge>
                     </div>
                     <div className="mt-2 text-sm line-clamp-3 text-muted-foreground">
@@ -450,7 +450,7 @@ export default function LyricsPage() {
                           window.scrollTo({ top: 0, behavior: 'smooth' });
                         }}
                       >
-                        View
+                        Ver
                       </Button>
                     </div>
                   </CardContent>

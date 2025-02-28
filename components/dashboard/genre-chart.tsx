@@ -25,7 +25,7 @@ export function GenreChart() {
   return (
     <Card className="col-span-1">
       <CardHeader>
-        <CardTitle>Genre Distribution</CardTitle>
+        <CardTitle>Distribuição de Gêneros</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="h-[300px]">

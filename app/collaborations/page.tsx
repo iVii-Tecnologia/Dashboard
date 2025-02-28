@@ -41,37 +41,37 @@ const collaborations = [
     id: '1', 
     artist: 'Luna Ray', 
     artistId: '1',
-    type: 'Contract Negotiation', 
-    status: 'In Progress', 
-    date: '2024-03-15',
-    lastContact: '2024-03-20',
+    type: 'Negociação de Contrato', 
+    status: 'Em Andamento', 
+    date: '15/03/2024',
+    lastContact: '20/03/2024',
   },
   { 
     id: '2', 
     artist: 'Marcus Vibe', 
     artistId: '2',
-    type: 'Song Licensing', 
-    status: 'Completed', 
-    date: '2024-02-10',
-    lastContact: '2024-02-28',
+    type: 'Licenciamento de Música', 
+    status: 'Concluído', 
+    date: '10/02/2024',
+    lastContact: '28/02/2024',
   },
   { 
     id: '3', 
     artist: 'Aria Nova', 
     artistId: '3',
-    type: 'Feature Request', 
-    status: 'Pending', 
-    date: '2024-03-22',
-    lastContact: '2024-03-22',
+    type: 'Solicitação de Parceria', 
+    status: 'Pendente', 
+    date: '22/03/2024',
+    lastContact: '22/03/2024',
   },
   { 
     id: '4', 
     artist: 'Echo Wave', 
     artistId: '5',
-    type: 'Album Production', 
-    status: 'Declined', 
-    date: '2024-01-05',
-    lastContact: '2024-01-15',
+    type: 'Produção de Álbum', 
+    status: 'Recusado', 
+    date: '05/01/2024',
+    lastContact: '15/01/2024',
   },
 ];
 
@@ -80,44 +80,44 @@ const messages = [
   {
     id: '1',
     collaboration: '1',
-    sender: 'You',
-    content: "We're interested in discussing a potential contract for your upcoming releases. Are you available for a call next week?",
-    timestamp: '2024-03-15 14:30',
+    sender: 'Você',
+    content: "Estamos interessados em discutir um possível contrato para seus próximos lançamentos. Você está disponível para uma chamada na próxima semana?",
+    timestamp: '15/03/2024 14:30',
   },
   {
     id: '2',
     collaboration: '1',
     sender: 'Luna Ray',
-    content: "Thank you for reaching out! I'm definitely interested and would be available on Tuesday or Wednesday afternoon next week.",
-    timestamp: '2024-03-16 09:45',
+    content: "Obrigada por entrar em contato! Estou definitivamente interessada e estaria disponível na terça ou quarta-feira à tarde na próxima semana.",
+    timestamp: '16/03/2024 09:45',
   },
   {
     id: '3',
     collaboration: '1',
-    sender: 'You',
-    content: "Great! Let's schedule for Tuesday at 2pm. I'll send over some preliminary terms for you to review before our call.",
-    timestamp: '2024-03-16 11:20',
+    sender: 'Você',
+    content: "Ótimo! Vamos agendar para terça-feira às 14h. Enviarei alguns termos preliminares para você revisar antes da nossa chamada.",
+    timestamp: '16/03/2024 11:20',
   },
   {
     id: '4',
     collaboration: '1',
     sender: 'Luna Ray',
-    content: "Sounds perfect. Looking forward to receiving the terms and our discussion on Tuesday.",
-    timestamp: '2024-03-16 12:05',
+    content: "Perfeito. Estou ansiosa para receber os termos e nossa discussão na terça-feira.",
+    timestamp: '16/03/2024 12:05',
   },
   {
     id: '5',
     collaboration: '1',
-    sender: 'You',
-    content: "I've attached the preliminary contract terms for your review. Please let me know if you have any questions before our call.",
-    timestamp: '2024-03-18 10:15',
+    sender: 'Você',
+    content: "Anexei os termos preliminares do contrato para sua análise. Por favor, me avise se tiver alguma dúvida antes da nossa chamada.",
+    timestamp: '18/03/2024 10:15',
   },
   {
     id: '6',
     collaboration: '1',
     sender: 'Luna Ray',
-    content: "Thank you for sending these over. I have a few questions about the royalty structure and exclusivity period that we can discuss during our call.",
-    timestamp: '2024-03-20 08:30',
+    content: "Obrigada por enviar os termos. Tenho algumas dúvidas sobre a estrutura de royalties e o período de exclusividade que podemos discutir durante nossa chamada.",
+    timestamp: '20/03/2024 08:30',
   },
 ];
 
@@ -130,11 +130,11 @@ export default function CollaborationsPage() {
   // Filter collaborations based on selected tab
   const filteredCollaborations = collaborations.filter(collab => {
     if (selectedTab === "active") {
-      return collab.status === "In Progress" || collab.status === "Pending";
+      return collab.status === "Em Andamento" || collab.status === "Pendente";
     } else if (selectedTab === "completed") {
-      return collab.status === "Completed";
+      return collab.status === "Concluído";
     } else if (selectedTab === "declined") {
-      return collab.status === "Declined";
+      return collab.status === "Recusado";
     }
     return true;
   });
@@ -164,29 +164,29 @@ export default function CollaborationsPage() {
     <MainLayout>
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-3xl font-bold">Collaborations & Partnerships</h1>
+          <h1 className="text-3xl font-bold">Colaborações & Parcerias</h1>
           <Dialog>
             <DialogTrigger asChild>
               <Button>
                 <Plus className="h-4 w-4 mr-2" />
-                New Collaboration
+                Nova Colaboração
               </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[500px]">
               <DialogHeader>
-                <DialogTitle>New Collaboration Request</DialogTitle>
+                <DialogTitle>Nova Solicitação de Colaboração</DialogTitle>
                 <DialogDescription>
-                  Reach out to an artist to start a new collaboration or partnership.
+                  Entre em contato com um artista para iniciar uma nova colaboração ou parceria.
                 </DialogDescription>
               </DialogHeader>
               <div className="grid gap-4 py-4">
                 <div className="grid gap-2">
                   <label htmlFor="artist" className="text-sm font-medium">
-                    Select Artist
+                    Selecionar Artista
                   </label>
                   <Select>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select an artist" />
+                      <SelectValue placeholder="Selecione um artista" />
                     </SelectTrigger>
                     <SelectContent>
                       {artists.map(artist => (
@@ -199,33 +199,33 @@ export default function CollaborationsPage() {
                 </div>
                 <div className="grid gap-2">
                   <label htmlFor="type" className="text-sm font-medium">
-                    Collaboration Type
+                    Tipo de Colaboração
                   </label>
                   <Select>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select type" />
+                      <SelectValue placeholder="Selecione o tipo" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="contract">Contract Negotiation</SelectItem>
-                      <SelectItem value="licensing">Song Licensing</SelectItem>
-                      <SelectItem value="feature">Feature Request</SelectItem>
-                      <SelectItem value="production">Album Production</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                      <SelectItem value="contract">Negociação de Contrato</SelectItem>
+                      <SelectItem value="licensing">Licenciamento de Música</SelectItem>
+                      <SelectItem value="feature">Solicitação de Parceria</SelectItem>
+                      <SelectItem value="production">Produção de Álbum</SelectItem>
+                      <SelectItem value="other">Outro</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
                 <div className="grid gap-2">
                   <label htmlFor="message" className="text-sm font-medium">
-                    Initial Message
+                    Mensagem Inicial
                   </label>
                   <Textarea 
-                    placeholder="Write your initial message to the artist..."
+                    placeholder="Escreva sua mensagem inicial para o artista..."
                     className="min-h-[100px]"
                   />
                 </div>
               </div>
               <DialogFooter>
-                <Button type="submit">Send Request</Button>
+                <Button type="submit">Enviar Solicitação</Button>
               </DialogFooter>
             </DialogContent>
           </Dialog>
@@ -237,9 +237,9 @@ export default function CollaborationsPage() {
             <CardHeader className="px-4 py-3">
               <Tabs defaultValue="active" onValueChange={setSelectedTab}>
                 <TabsList className="grid w-full grid-cols-3">
-                  <TabsTrigger value="active">Active</TabsTrigger>
-                  <TabsTrigger value="completed">Completed</TabsTrigger>
-                  <TabsTrigger value="declined">Declined</TabsTrigger>
+                  <TabsTrigger value="active">Ativas</TabsTrigger>
+                  <TabsTrigger value="completed">Concluídas</TabsTrigger>
+                  <TabsTrigger value="declined">Recusadas</TabsTrigger>
                 </TabsList>
               </Tabs>
             </CardHeader>
@@ -247,7 +247,7 @@ export default function CollaborationsPage() {
               <div className="divide-y">
                 {filteredCollaborations.length === 0 ? (
                   <div className="py-8 text-center">
-                    <p className="text-muted-foreground">No collaborations found.</p>
+                    <p className="text-muted-foreground">Nenhuma colaboração encontrada.</p>
                   </div>
                 ) : (
                   filteredCollaborations.map(collab => (
@@ -261,9 +261,9 @@ export default function CollaborationsPage() {
                       <div className="flex justify-between items-start">
                         <h3 className="font-medium">{collab.artist}</h3>
                         <span className={`text-xs px-2 py-1 rounded-full ${
-                          collab.status === 'In Progress' ? 'bg-blue-500/20 text-blue-500' :
-                          collab.status === 'Completed' ? 'bg-green-500/20 text-green-500' :
-                          collab.status === 'Pending' ? 'bg-yellow-500/20 text-yellow-500' :
+                          collab.status === 'Em Andamento' ? 'bg-blue-500/20 text-blue-500' :
+                          collab.status === 'Concluído' ? 'bg-green-500/20 text-green-500' :
+                          collab.status === 'Pendente' ? 'bg-yellow-500/20 text-yellow-500' :
                           'bg-red-500/20 text-red-500'
                         }`}>
                           {collab.status}
@@ -275,7 +275,7 @@ export default function CollaborationsPage() {
                         <span>{collab.date}</span>
                         <span className="mx-2">•</span>
                         <Clock className="h-3 w-3 mr-1" />
-                        <span>Last contact: {collab.lastContact}</span>
+                        <span>Último contato: {collab.lastContact}</span>
                       </div>
                     </div>
                   ))
@@ -292,17 +292,17 @@ export default function CollaborationsPage() {
                   <div>
                     <CardTitle>{selectedCollaboration.artist}</CardTitle>
                     <p className="text-sm text-muted-foreground mt-1">
-                      {selectedCollaboration.type} • Started on {selectedCollaboration.date}
+                      {selectedCollaboration.type} • Iniciado em {selectedCollaboration.date}
                     </p>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Button variant="outline" size="sm">
                       <Download className="h-4 w-4 mr-2" />
-                      Export Data
+                      Exportar Dados
                     </Button>
                     <Button size="sm">
                       <Mail className="h-4 w-4 mr-2" />
-                      Contact
+                      Contatar
                     </Button>
                   </div>
                 </CardHeader>
@@ -310,16 +310,16 @@ export default function CollaborationsPage() {
                   {/* Collaboration Status */}
                   <div className="flex items-center space-x-4 mb-6">
                     <div className={`p-2 rounded-full ${
-                      selectedCollaboration.status === 'In Progress' ? 'bg-blue-500/20' :
-                      selectedCollaboration.status === 'Completed' ? 'bg-green-500/20' :
-                      selectedCollaboration.status === 'Pending' ? 'bg-yellow-500/20' :
+                      selectedCollaboration.status === 'Em Andamento' ? 'bg-blue-500/20' :
+                      selectedCollaboration.status === 'Concluído' ? 'bg-green-500/20' :
+                      selectedCollaboration.status === 'Pendente' ? 'bg-yellow-500/20' :
                       'bg-red-500/20'
                     }`}>
-                      {selectedCollaboration.status === 'In Progress' ? (
+                      {selectedCollaboration.status === 'Em Andamento' ? (
                         <Clock className="h-5 w-5 text-blue-500" />
-                      ) : selectedCollaboration.status === 'Completed' ? (
+                      ) : selectedCollaboration.status === 'Concluído' ? (
                         <CheckCircle2 className="h-5 w-5 text-green-500" />
-                      ) : selectedCollaboration.status === 'Pending' ? (
+                      ) : selectedCollaboration.status === 'Pendente' ? (
                         <AlertCircle className="h-5 w-5 text-yellow-500" />
                       ) : (
                         <XCircle className="h-5 w-5 text-red-500" />
@@ -328,7 +328,7 @@ export default function CollaborationsPage() {
                     <div>
                       <p className="font-medium">Status: {selectedCollaboration.status}</p>
                       <p className="text-sm text-muted-foreground">
-                        Last updated: {selectedCollaboration.lastContact}
+                        Última atualização: {selectedCollaboration.lastContact}
                       </p>
                     </div>
                   </div>
@@ -336,22 +336,22 @@ export default function CollaborationsPage() {
                   {/* Artist Info */}
                   {collaborationArtist && (
                     <div className="mb-6 p-4 border rounded-lg">
-                      <h3 className="font-medium mb-2">Artist Information</h3>
+                      <h3 className="font-medium mb-2">Informações do Artista</h3>
                       <div className="grid grid-cols-2 gap-4 text-sm">
                         <div>
-                          <p className="text-muted-foreground">Location</p>
+                          <p className="text-muted-foreground">Localização</p>
                           <p>{collaborationArtist.location}</p>
                         </div>
                         <div>
-                          <p className="text-muted-foreground">Followers</p>
+                          <p className="text-muted-foreground">Seguidores</p>
                           <p>{formatNumber(collaborationArtist.followers)}</p>
                         </div>
                         <div>
-                          <p className="text-muted-foreground">Engagement</p>
+                          <p className="text-muted-foreground">Engajamento</p>
                           <p>{collaborationArtist.engagement}%</p>
                         </div>
                         <div>
-                          <p className="text-muted-foreground">Genre</p>
+                          <p className="text-muted-foreground">Gênero</p>
                           <p>{collaborationArtist.genre}</p>
                         </div>
                       </div>
@@ -361,18 +361,18 @@ export default function CollaborationsPage() {
                   {/* Messages */}
                   <div className="border rounded-lg overflow-hidden">
                     <div className="p-4 border-b">
-                      <h3 className="font-medium">Conversation History</h3>
+                      <h3 className="font-medium">Histórico de Conversas</h3>
                     </div>
                     
                     <div className="p-4 h-[300px] overflow-y-auto space-y-4">
                       {collaborationMessages.map(message => (
                         <div 
                           key={message.id}
-                          className={`flex ${message.sender === 'You' ? 'justify-end' : 'justify-start'}`}
+                          className={`flex ${message.sender === 'Você' ? 'justify-end' : 'justify-start'}`}
                         >
                           <div 
                             className={`max-w-[80%] p-3 rounded-lg ${
-                              message.sender === 'You' 
+                              message.sender === 'Você' 
                                 ? 'bg-primary text-primary-foreground' 
                                 : 'bg-muted'
                             }`}
@@ -390,7 +390,7 @@ export default function CollaborationsPage() {
                     <div className="p-4 border-t">
                       <div className="flex space-x-2">
                         <Input
-                          placeholder="Type your message..."
+                          placeholder="Digite sua mensagem..."
                           value={newMessage}
                           onChange={(e) => setNewMessage(e.target.value)}
                           onKeyDown={(e) => {
@@ -410,7 +410,7 @@ export default function CollaborationsPage() {
               </>
             ) : (
               <div className="flex flex-col items-center justify-center py-12 text-center">
-                <p className="text-muted-foreground">Select a collaboration to view details.</p>
+                <p className="text-muted-foreground">Selecione uma colaboração para ver os detalhes.</p>
               </div>
             )}
           </Card>
@@ -419,47 +419,47 @@ export default function CollaborationsPage() {
         {/* Collaboration Analytics */}
         <Card>
           <CardHeader>
-            <CardTitle>Collaboration Analytics</CardTitle>
+            <CardTitle>Análise de Colaborações</CardTitle>
           </CardHeader>
           <CardContent>
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Collaboration Type</TableHead>
+                  <TableHead>Tipo de Colaboração</TableHead>
                   <TableHead>Total</TableHead>
-                  <TableHead>Success Rate</TableHead>
-                  <TableHead>Avg. Response Time</TableHead>
-                  <TableHead>Avg. Completion Time</TableHead>
+                  <TableHead>Taxa de Sucesso</TableHead>
+                  <TableHead>Tempo Médio de Resposta</TableHead>
+                  <TableHead>Tempo Médio de Conclusão</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 <TableRow>
-                  <TableCell className="font-medium">Contract Negotiation</TableCell>
+                  <TableCell className="font-medium">Negociação de Contrato</TableCell>
                   <TableCell>24</TableCell>
                   <TableCell>75%</TableCell>
-                  <TableCell>1.2 days</TableCell>
-                  <TableCell>14 days</TableCell>
+                  <TableCell>1,2 dias</TableCell>
+                  <TableCell>14 dias</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium">Song Licensing</TableCell>
+                  <TableCell className="font-medium">Licenciamento de Música</TableCell>
                   <TableCell>18</TableCell>
                   <TableCell>83%</TableCell>
-                  <TableCell>0.8 days</TableCell>
-                  <TableCell>7 days</TableCell>
+                  <TableCell>0,8 dias</TableCell>
+                  <TableCell>7 dias</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium">Feature Request</TableCell>
+                  <TableCell className="font-medium">Solicitação de Parceria</TableCell>
                   <TableCell>12</TableCell>
                   <TableCell>58%</TableCell>
-                  <TableCell>1.5 days</TableCell>
-                  <TableCell>21 days</TableCell>
+                  <TableCell>1,5 dias</TableCell>
+                  <TableCell>21 dias</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium">Album Production</TableCell>
+                  <TableCell className="font-medium">Produção de Álbum</TableCell>
                   <TableCell>8</TableCell>
                   <TableCell>62%</TableCell>
-                  <TableCell>1.1 days</TableCell>
-                  <TableCell>45 days</TableCell>
+                  <TableCell>1,1 dias</TableCell>
+                  <TableCell>45 dias</TableCell>
                 </TableRow>
               </TableBody>
             </Table>

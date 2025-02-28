@@ -17,7 +17,7 @@ export function TrendingArtists() {
   return (
     <Card className="col-span-1">
       <CardHeader>
-        <CardTitle>Trending Artists</CardTitle>
+        <CardTitle>Artistas em Alta</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
@@ -35,9 +35,9 @@ export function TrendingArtists() {
                   </Badge>
                 </div>
                 <div className="flex items-center text-xs text-muted-foreground">
-                  <span>{formatNumber(artist.followers)} followers</span>
+                  <span>{formatNumber(artist.followers)} seguidores</span>
                   <span className="mx-2">•</span>
-                  <span className="text-emerald-500 font-medium">{artist.engagement}% engagement</span>
+                  <span className="text-emerald-500 font-medium">{artist.engagement}% engajamento</span>
                 </div>
               </div>
             </div>

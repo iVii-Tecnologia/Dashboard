@@ -42,7 +42,7 @@ export function TrackCard({ track }: TrackCardProps) {
         <div className="flex items-center justify-between mt-4 text-sm">
           <div className="flex items-center">
             <BarChart className="h-4 w-4 mr-1 text-muted-foreground" />
-            <span>{formatNumber(track.plays)} plays</span>
+            <span>{formatNumber(track.plays)} reproduções</span>
           </div>
           <div className="text-muted-foreground">{track.duration}</div>
         </div>

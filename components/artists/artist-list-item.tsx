@@ -42,17 +42,17 @@ export function ArtistListItem({ artist }: ArtistListItemProps) {
         </div>
         
         <div className="text-sm text-muted-foreground mt-1">
-          {artist.location} • {artist.age} years old
+          {artist.location} • {artist.age} anos
         </div>
         
         <div className="flex items-center space-x-4 mt-2 text-sm">
           <div>
             <span className="font-medium">{formatNumber(artist.followers)}</span>
-            <span className="text-muted-foreground ml-1">followers</span>
+            <span className="text-muted-foreground ml-1">seguidores</span>
           </div>
           <div>
             <span className="font-medium text-emerald-500">{artist.engagement}%</span>
-            <span className="text-muted-foreground ml-1">engagement</span>
+            <span className="text-muted-foreground ml-1">engajamento</span>
           </div>
         </div>
       </div>
@@ -60,7 +60,7 @@ export function ArtistListItem({ artist }: ArtistListItemProps) {
       <Link href={`/artists/${artist.id}`} passHref>
         <Button variant="outline" size="sm" className="flex-shrink-0">
           <ExternalLink className="h-4 w-4 mr-2" />
-          View Profile
+          Ver Perfil
         </Button>
       </Link>
     </div>

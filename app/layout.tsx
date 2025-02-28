@@ -8,8 +8,8 @@ import { Toaster as SonnerToaster } from '@/components/ui/sonner';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'iVii - Music Audition Platform',
-  description: 'Discover new talents, songs, and lyrics',
+  title: 'iVii - Plataforma de Audição Musical',
+  description: 'Descubra novos talentos, músicas e letras',
 };
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="pt-BR" suppressHydrationWarning>
       <body className={`${inter.className} dark`}>
         <ThemeProvider
           attribute="class"

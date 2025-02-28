@@ -22,36 +22,36 @@ import {
 } from "recharts";
 import { useStore } from "@/lib/store";
 
-// Mock data for analytics
+// Dados simulados para análises
 const engagementData = [
-  { date: 'Jan 1', engagement: 5.2, plays: 12000 },
-  { date: 'Jan 8', engagement: 5.8, plays: 15000 },
-  { date: 'Jan 15', engagement: 6.3, plays: 18000 },
-  { date: 'Jan 22', engagement: 6.7, plays: 22000 },
-  { date: 'Jan 29', engagement: 7.2, plays: 28000 },
-  { date: 'Feb 5', engagement: 7.8, plays: 32000 },
-  { date: 'Feb 12', engagement: 8.3, plays: 38000 },
-  { date: 'Feb 19', engagement: 8.7, plays: 45000 },
-  { date: 'Feb 26', engagement: 9.1, plays: 52000 },
-  { date: 'Mar 5', engagement: 9.5, plays: 58000 },
-  { date: 'Mar 12', engagement: 9.8, plays: 65000 }
+  { date: '01 Jan', engagement: 5.2, plays: 12000 },
+  { date: '08 Jan', engagement: 5.8, plays: 15000 },
+  { date: '15 Jan', engagement: 6.3, plays: 18000 },
+  { date: '22 Jan', engagement: 6.7, plays: 22000 },
+  { date: '29 Jan', engagement: 7.2, plays: 28000 },
+  { date: '05 Fev', engagement: 7.8, plays: 32000 },
+  { date: '12 Fev', engagement: 8.3, plays: 38000 },
+  { date: '19 Fev', engagement: 8.7, plays: 45000 },
+  { date: '26 Fev', engagement: 9.1, plays: 52000 },
+  { date: '05 Mar', engagement: 9.5, plays: 58000 },
+  { date: '12 Mar', engagement: 9.8, plays: 65000 }
 ];
 
 const genreGrowthData = [
   { name: 'Pop', lastMonth: 8.2, thisMonth: 12.5 },
   { name: 'Hip Hop', lastMonth: 10.5, thisMonth: 15.2 },
-  { name: 'Electronic', lastMonth: 5.3, thisMonth: 8.7 },
+  { name: 'Eletrônica', lastMonth: 5.3, thisMonth: 8.7 },
   { name: 'R&B', lastMonth: 3.8, thisMonth: 5.3 },
-  { name: 'Alternative', lastMonth: 4.2, thisMonth: 7.1 },
+  { name: 'Alternativo', lastMonth: 4.2, thisMonth: 7.1 },
   { name: 'Indie', lastMonth: 6.1, thisMonth: 9.8 }
 ];
 
 const regionEngagementData = [
-  { name: 'North America', value: 35 },
-  { name: 'Europe', value: 30 },
-  { name: 'Asia', value: 20 },
-  { name: 'South America', value: 10 },
-  { name: 'Australia', value: 5 }
+  { name: 'América do Norte', value: 35 },
+  { name: 'Europa', value: 30 },
+  { name: 'Ásia', value: 20 },
+  { name: 'América do Sul', value: 10 },
+  { name: 'Austrália', value: 5 }
 ];
 
 const COLORS = [
@@ -73,20 +73,20 @@ export default function AnalyticsPage() {
   return (
     <MainLayout>
       <div className="space-y-6">
-        <h1 className="text-3xl font-bold">Trends & Analytics</h1>
+        <h1 className="text-3xl font-bold">Tendências & Análises</h1>
         
         <Tabs defaultValue="overview">
           <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="genres">Genre Trends</TabsTrigger>
-            <TabsTrigger value="audience">Audience Insights</TabsTrigger>
+            <TabsTrigger value="overview">Visão Geral</TabsTrigger>
+            <TabsTrigger value="genres">Tendências de Gênero</TabsTrigger>
+            <TabsTrigger value="audience">Insights da Audiência</TabsTrigger>
           </TabsList>
           
           <TabsContent value="overview" className="mt-6 space-y-6">
-            {/* Engagement Over Time */}
+            {/* Engajamento ao Longo do Tempo */}
             <Card>
               <CardHeader>
-                <CardTitle>Engagement & Plays Over Time</CardTitle>
+                <CardTitle>Engajamento & Reproduções ao Longo do Tempo</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="h-[400px]">
@@ -128,7 +128,7 @@ export default function AnalyticsPage() {
                         dataKey="plays" 
                         stroke="hsl(var(--chart-1))" 
                         fill="hsl(var(--chart-1)/0.2)" 
-                        name="Total Plays"
+                        name="Total de Reproduções"
                       />
                       <Area 
                         yAxisId="right"
@@ -136,7 +136,7 @@ export default function AnalyticsPage() {
                         dataKey="engagement" 
                         stroke="hsl(var(--chart-2))" 
                         fill="hsl(var(--chart-2)/0.2)" 
-                        name="Engagement (%)"
+                        name="Engajamento (%)"
                       />
                     </AreaChart>
                   </ResponsiveContainer>
@@ -144,11 +144,11 @@ export default function AnalyticsPage() {
               </CardContent>
             </Card>
             
-            {/* Regional Distribution */}
+            {/* Distribuição Regional */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Regional Engagement</CardTitle>
+                  <CardTitle>Engajamento Regional</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="h-[300px]">
@@ -175,7 +175,7 @@ export default function AnalyticsPage() {
                             borderRadius: "var(--radius)",
                             color: "hsl(var(--card-foreground))"
                           }} 
-                          formatter={(value) => [`${value}%`, 'Engagement']}
+                          formatter={(value) => [`${value}%`, 'Engajamento']}
                         />
                       </PieChart>
                     </ResponsiveContainer>
@@ -185,7 +185,7 @@ export default function AnalyticsPage() {
               
               <Card>
                 <CardHeader>
-                  <CardTitle>Age Group Distribution</CardTitle>
+                  <CardTitle>Distribuição por Faixa Etária</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="h-[300px]">
@@ -212,7 +212,7 @@ export default function AnalyticsPage() {
                             borderRadius: "var(--radius)",
                             color: "hsl(var(--card-foreground))"
                           }} 
-                          formatter={(value) => [`${value}%`, 'Users']}
+                          formatter={(value) => [`${value}%`, 'Usuários']}
                         />
                       </PieChart>
                     </ResponsiveContainer>
@@ -223,10 +223,10 @@ export default function AnalyticsPage() {
           </TabsContent>
           
           <TabsContent value="genres" className="mt-6 space-y-6">
-            {/* Genre Growth */}
+            {/* Crescimento de Gênero */}
             <Card>
               <CardHeader>
-                <CardTitle>Genre Growth Rate</CardTitle>
+                <CardTitle>Taxa de Crescimento por Gênero</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="h-[400px]">
@@ -252,11 +252,11 @@ export default function AnalyticsPage() {
                           borderRadius: "var(--radius)",
                           color: "hsl(var(--card-foreground))"
                         }} 
-                        formatter={(value) => [`${value}%`, 'Growth Rate']}
+                        formatter={(value) => [`${value}%`, 'Taxa de Crescimento']}
                       />
                       <Legend />
-                      <Bar dataKey="lastMonth" fill="hsl(var(--chart-3))" name="Last Month" />
-                      <Bar dataKey="thisMonth" fill="hsl(var(--chart-1))" name="This Month" />
+                      <Bar dataKey="lastMonth" fill="hsl(var(--chart-3))" name="Mês Passado" />
+                      <Bar dataKey="thisMonth" fill="hsl(var(--chart-1))" name="Este Mês" />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>

@@ -21,13 +21,13 @@ import { formatNumber } from "@/lib/utils";
 // Mock growth data for the artist
 const growthData = [
   { month: 'Jan', followers: 12000, engagement: 5.2 },
-  { month: 'Feb', followers: 15000, engagement: 5.8 },
+  { month: 'Fev', followers: 15000, engagement: 5.8 },
   { month: 'Mar', followers: 18000, engagement: 6.3 },
-  { month: 'Apr', followers: 22000, engagement: 6.7 },
-  { month: 'May', followers: 28000, engagement: 7.2 },
+  { month: 'Abr', followers: 22000, engagement: 6.7 },
+  { month: 'Mai', followers: 28000, engagement: 7.2 },
   { month: 'Jun', followers: 32000, engagement: 7.8 },
   { month: 'Jul', followers: 38000, engagement: 8.3 },
-  { month: 'Aug', followers: 45000, engagement: 8.7 },
+  { month: 'Ago', followers: 45000, engagement: 8.7 },
 ];
 
 export default function ArtistProfilePage() {
@@ -46,8 +46,8 @@ export default function ArtistProfilePage() {
     return (
       <MainLayout>
         <div className="flex flex-col items-center justify-center py-12 text-center">
-          <h2 className="text-2xl font-bold">Artist not found</h2>
-          <p className="text-muted-foreground mt-2">The artist you're looking for doesn't exist or has been removed.</p>
+          <h2 className="text-2xl font-bold">Artista não encontrado</h2>
+          <p className="text-muted-foreground mt-2">O artista que você está procurando não existe ou foi removido.</p>
         </div>
       </MainLayout>
     );
@@ -72,7 +72,7 @@ export default function ArtistProfilePage() {
                   <span>{artist.location}</span>
                   <span className="mx-2">•</span>
                   <Calendar className="h-4 w-4 mr-1" />
-                  <span>{artist.age} years old</span>
+                  <span>{artist.age} anos</span>
                 </div>
               </div>
               
@@ -84,12 +84,12 @@ export default function ArtistProfilePage() {
                 {artist.isBookmarked ? (
                   <>
                     <BookmarkCheck className="h-4 w-4 mr-2 text-primary" />
-                    Bookmarked
+                    Favoritado
                   </>
                 ) : (
                   <>
                     <Bookmark className="h-4 w-4 mr-2" />
-                    Bookmark
+                    Favoritar
                   </>
                 )}
               </Button>
@@ -99,21 +99,21 @@ export default function ArtistProfilePage() {
               <div className="flex items-center p-4 border rounded-lg">
                 <Users className="h-5 w-5 mr-3 text-blue-500" />
                 <div>
-                  <p className="text-sm text-muted-foreground">Followers</p>
+                  <p className="text-sm text-muted-foreground">Seguidores</p>
                   <p className="font-semibold">{formatNumber(artist.followers)}</p>
                 </div>
               </div>
               <div className="flex items-center p-4 border rounded-lg">
                 <BarChart className="h-5 w-5 mr-3 text-emerald-500" />
                 <div>
-                  <p className="text-sm text-muted-foreground">Engagement</p>
+                  <p className="text-sm text-muted-foreground">Engajamento</p>
                   <p className="font-semibold">{artist.engagement}%</p>
                 </div>
               </div>
               <div className="flex items-center p-4 border rounded-lg">
                 <Music className="h-5 w-5 mr-3 text-violet-500" />
                 <div>
-                  <p className="text-sm text-muted-foreground">Tracks</p>
+                  <p className="text-sm text-muted-foreground">Faixas</p>
                   <p className="font-semibold">{artistTracks.length}</p>
                 </div>
               </div>
@@ -122,7 +122,7 @@ export default function ArtistProfilePage() {
             <div className="mt-6">
               <Button>
                 <Mail className="h-4 w-4 mr-2" />
-                Contact Artist
+                Contatar Artista
               </Button>
             </div>
           </div>
@@ -131,14 +131,14 @@ export default function ArtistProfilePage() {
         {/* Tabs */}
         <Tabs defaultValue="tracks">
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="tracks">Tracks</TabsTrigger>
-            <TabsTrigger value="analytics">Analytics</TabsTrigger>
+            <TabsTrigger value="tracks">Faixas</TabsTrigger>
+            <TabsTrigger value="analytics">Análises</TabsTrigger>
           </TabsList>
           
           <TabsContent value="tracks" className="mt-6">
             {artistTracks.length === 0 ? (
               <div className="text-center py-12">
-                <p className="text-muted-foreground">No tracks available for this artist.</p>
+                <p className="text-muted-foreground">Nenhuma faixa disponível para este artista.</p>
               </div>
             ) : (
               <div className="space-y-4">
@@ -152,7 +152,7 @@ export default function ArtistProfilePage() {
           <TabsContent value="analytics" className="mt-6">
             <div className="space-y-6">
               <div className="border rounded-lg p-6">
-                <h3 className="text-lg font-medium mb-4">Growth Analytics</h3>
+                <h3 className="text-lg font-medium mb-4">Análise de Crescimento</h3>
                 <div className="h-[300px]">
                   <ResponsiveContainer width="100%" height="100%">
                     <AreaChart
@@ -191,7 +191,7 @@ export default function ArtistProfilePage() {
                         dataKey="followers" 
                         stroke="hsl(var(--chart-1))" 
                         fill="hsl(var(--chart-1)/0.2)" 
-                        name="Followers"
+                        name="Seguidores"
                       />
                       <Area 
                         yAxisId="right"
@@ -199,7 +199,7 @@ export default function ArtistProfilePage() {
                         dataKey="engagement" 
                         stroke="hsl(var(--chart-2))" 
                         fill="hsl(var(--chart-2)/0.2)" 
-                        name="Engagement (%)"
+                        name="Engajamento (%)"
                       />
                     </AreaChart>
                   </ResponsiveContainer>
@@ -208,7 +208,7 @@ export default function ArtistProfilePage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="border rounded-lg p-6">
-                  <h3 className="text-lg font-medium mb-4">Audience Demographics</h3>
+                  <h3 className="text-lg font-medium mb-4">Demografia da Audiência</h3>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <span>18-24</span>
@@ -242,31 +242,31 @@ export default function ArtistProfilePage() {
                 </div>
                 
                 <div className="border rounded-lg p-6">
-                  <h3 className="text-lg font-medium mb-4">Top Regions</h3>
+                  <h3 className="text-lg font-medium mb-4">Principais Regiões</h3>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
-                      <span>United States</span>
+                      <span>Estados Unidos</span>
                       <div className="w-2/3 bg-muted rounded-full h-2">
                         <div className="bg-chart-4 h-2 rounded-full" style={{ width: '40%' }}></div>
                       </div>
                       <span className="text-sm">40%</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span>United Kingdom</span>
+                      <span>Reino Unido</span>
                       <div className="w-2/3 bg-muted rounded-full h-2">
                         <div className="bg-chart-4 h-2 rounded-full" style={{ width: '20%' }}></div>
                       </div>
                       <span className="text-sm">20%</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span>Canada</span>
+                      <span>Canadá</span>
                       <div className="w-2/3 bg-muted rounded-full h-2">
                         <div className="bg-chart-4 h-2 rounded-full" style={{ width: '15%' }}></div>
                       </div>
                       <span className="text-sm">15%</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span>Australia</span>
+                      <span>Austrália</span>
                       <div className="w-2/3 bg-muted rounded-full h-2">
                         <div className="bg-chart-4 h-2 rounded-full" style={{ width: '10%' }}></div>
                       </div>

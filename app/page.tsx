@@ -10,35 +10,35 @@ export default function Dashboard() {
   return (
     <MainLayout>
       <div className="space-y-6">
-        <h1 className="text-3xl font-bold">Dashboard</h1>
+        <h1 className="text-3xl font-bold">Painel de Controle</h1>
         
         {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <StatsCard
-            title="Total Artists"
-            value="12,543"
+            title="Total de Artistas"
+            value="12.543"
             icon={<Users className="h-4 w-4 text-muted-foreground" />}
-            description="This month"
+            description="Este mês"
             trend={12.5}
           />
           <StatsCard
-            title="Total Tracks"
-            value="45,271"
+            title="Total de Faixas"
+            value="45.271"
             icon={<Music2 className="h-4 w-4 text-muted-foreground" />}
-            description="This month"
+            description="Este mês"
             trend={8.3}
           />
           <StatsCard
-            title="Trending Genres"
-            value="Hip Hop, Electronic"
+            title="Gêneros em Alta"
+            value="Hip Hop, Eletrônica"
             icon={<TrendingUp className="h-4 w-4 text-muted-foreground" />}
-            description="Based on growth"
+            description="Baseado no crescimento"
           />
           <StatsCard
-            title="Total Plays"
-            value="2.4M"
+            title="Total de Reproduções"
+            value="2,4M"
             icon={<Headphones className="h-4 w-4 text-muted-foreground" />}
-            description="This month"
+            description="Este mês"
             trend={15.7}
           />
         </div>

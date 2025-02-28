@@ -30,14 +30,14 @@ export default function MusicPage() {
   const [sortBy, setSortBy] = useState("recent");
   const [filteredTracks, setFilteredTracks] = useState<Track[]>(tracks);
   
-  // Get unique genres from tracks
+  // Obter gêneros únicos das faixas
   const genres = Array.from(new Set(tracks.map(track => track.genre)));
   
-  // Filter and sort tracks
+  // Filtrar e ordenar faixas
   useEffect(() => {
     let result = [...tracks];
     
-    // Apply search filter
+    // Aplicar filtro de busca
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
       result = result.filter(
@@ -48,12 +48,12 @@ export default function MusicPage() {
       );
     }
     
-    // Apply genre filter
+    // Aplicar filtro de gênero
     if (selectedGenre) {
       result = result.filter(track => track.genre === selectedGenre);
     }
     
-    // Apply sorting
+    // Aplicar ordenação
     switch (sortBy) {
       case "recent":
         result.sort((a, b) => new Date(b.uploadDate).getTime() - new Date(a.uploadDate).getTime());
@@ -73,7 +73,7 @@ export default function MusicPage() {
     <MainLayout>
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-3xl font-bold">Music Library</h1>
+          <h1 className="text-3xl font-bold">Biblioteca de Músicas</h1>
           <div className="flex items-center space-x-2">
             <Button
               variant={viewMode === 'grid' ? 'default' : 'outline'}
@@ -92,13 +92,13 @@ export default function MusicPage() {
           </div>
         </div>
         
-        {/* Filters */}
+        {/* Filtros */}
         <div className="flex flex-col md:flex-row gap-4">
           <div className="relative flex-1">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Search tracks by title, artist, or genre..."
+              placeholder="Buscar faixas por título, artista ou gênero..."
               className="pl-8"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -110,10 +110,10 @@ export default function MusicPage() {
               <Select value={selectedGenre} onValueChange={setSelectedGenre}>
                 <SelectTrigger>
                   <Filter className="h-4 w-4 mr-2" />
-                  <SelectValue placeholder="Genre" />
+                  <SelectValue placeholder="Gênero" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All Genres</SelectItem>
+                  <SelectItem value="all">Todos os Gêneros</SelectItem>
                   {genres.map(genre => (
                     <SelectItem key={genre} value={genre}>{genre}</SelectItem>
                   ))}
@@ -125,23 +125,23 @@ export default function MusicPage() {
               <Select value={sortBy} onValueChange={setSortBy}>
                 <SelectTrigger>
                   <TrendingUp className="h-4 w-4 mr-2" />
-                  <SelectValue placeholder="Sort by" />
+                  <SelectValue placeholder="Ordenar por" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="recent">Most Recent</SelectItem>
-                  <SelectItem value="popular">Most Popular</SelectItem>
-                  <SelectItem value="title">Title (A-Z)</SelectItem>
+                  <SelectItem value="recent">Mais Recentes</SelectItem>
+                  <SelectItem value="popular">Mais Populares</SelectItem>
+                  <SelectItem value="title">Título (A-Z)</SelectItem>
                 </SelectContent>
               </Select>
             </div>
           </div>
         </div>
         
-        {/* Tracks Grid/List */}
+        {/* Grade/Lista de Faixas */}
         {filteredTracks.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-12 text-center">
-            <p className="text-lg text-muted-foreground">No tracks found matching your criteria.</p>
-            <p className="text-sm text-muted-foreground mt-2">Try adjusting your filters or search query.</p>
+            <p className="text-lg text-muted-foreground">Nenhuma faixa encontrada com esses critérios.</p>
+            <p className="text-sm text-muted-foreground mt-2">Tente ajustar seus filtros ou termos de busca.</p>
           </div>
         ) : viewMode === 'grid' ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

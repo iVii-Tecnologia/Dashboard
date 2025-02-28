@@ -46,11 +46,11 @@ export function ArtistCard({ artist }: ArtistCardProps) {
         
         <div className="grid grid-cols-2 gap-2 mt-4 text-sm">
           <div className="flex flex-col">
-            <span className="text-muted-foreground">Followers</span>
+            <span className="text-muted-foreground">Seguidores</span>
             <span className="font-medium">{formatNumber(artist.followers)}</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-muted-foreground">Engagement</span>
+            <span className="text-muted-foreground">Engajamento</span>
             <span className="font-medium text-emerald-500">{artist.engagement}%</span>
           </div>
         </div>
@@ -58,7 +58,7 @@ export function ArtistCard({ artist }: ArtistCardProps) {
       <CardFooter className="p-4 pt-0 flex justify-between">
         <Link href={`/artists/${artist.id}`} passHref>
           <Button variant="default" size="sm" className="w-full">
-            View Profile
+            Ver Perfil
           </Button>
         </Link>
       </CardFooter>

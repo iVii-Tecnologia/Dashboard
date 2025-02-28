@@ -63,7 +63,7 @@ export default function ArtistsPage() {
     <MainLayout>
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-3xl font-bold">Artist Discovery</h1>
+          <h1 className="text-3xl font-bold">Descoberta de Artistas</h1>
           <div className="flex items-center space-x-2">
             <Button
               variant={viewMode === 'grid' ? 'default' : 'outline'}
@@ -88,7 +88,7 @@ export default function ArtistsPage() {
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
               type="search"
-              placeholder="Search artists by name, genre, or location..."
+              placeholder="Buscar artistas por nome, gênero ou localização..."
               className="pl-8"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -100,10 +100,10 @@ export default function ArtistsPage() {
               <Select value={selectedGenre} onValueChange={setSelectedGenre}>
                 <SelectTrigger>
                   <Filter className="h-4 w-4 mr-2" />
-                  <SelectValue placeholder="Genre" />
+                  <SelectValue placeholder="Gênero" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">All Genres</SelectItem>
+                  <SelectItem value="all">Todos os Gêneros</SelectItem>
                   {genres.map(genre => (
                     <SelectItem key={genre} value={genre}>{genre}</SelectItem>
                   ))}
@@ -116,7 +116,7 @@ export default function ArtistsPage() {
               onClick={() => setShowBookmarked(!showBookmarked)}
             >
               <Bookmark className="h-4 w-4 mr-2" />
-              Bookmarked
+              Favoritos
             </Button>
           </div>
         </div>
@@ -124,8 +124,8 @@ export default function ArtistsPage() {
         {/* Artists Grid/List */}
         {filteredArtists.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-12 text-center">
-            <p className="text-lg text-muted-foreground">No artists found matching your criteria.</p>
-            <p className="text-sm text-muted-foreground mt-2">Try adjusting your filters or search query.</p>
+            <p className="text-lg text-muted-foreground">Nenhum artista encontrado com esses critérios.</p>
+            <p className="text-sm text-muted-foreground mt-2">Tente ajustar seus filtros ou termos de busca.</p>
           </div>
         ) : viewMode === 'grid' ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

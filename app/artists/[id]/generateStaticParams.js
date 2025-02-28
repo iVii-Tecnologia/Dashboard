@@ -1,7 +1,7 @@
-// This file is a server component that generates static params for the artist pages
+// Este arquivo é um componente do servidor que gera parâmetros estáticos para as páginas de artistas
 
 export function generateStaticParams() {
-  // Define the artist IDs that will be pre-rendered at build time
+  // Define os IDs de artistas que serão pré-renderizados no momento da construção
   const artistIds = ['1', '2', '3', '4', '5', '6'];
   
   return artistIds.map((id) => ({

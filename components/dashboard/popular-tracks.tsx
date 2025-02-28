@@ -17,7 +17,7 @@ export function PopularTracks() {
   return (
     <Card className="col-span-1">
       <CardHeader>
-        <CardTitle>Popular Tracks</CardTitle>
+        <CardTitle>Faixas Populares</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">

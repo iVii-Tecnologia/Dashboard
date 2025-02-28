@@ -16,7 +16,7 @@ export function RegionMap() {
   return (
     <Card className="col-span-2">
       <CardHeader>
-        <CardTitle>Regional Distribution</CardTitle>
+        <CardTitle>Distribuição Regional</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="h-[300px]">
@@ -48,8 +48,8 @@ export function RegionMap() {
                   color: "hsl(var(--card-foreground))"
                 }} 
               />
-              <Bar dataKey="artists" fill="hsl(var(--chart-1))" name="Artists" />
-              <Bar dataKey="engagement" fill="hsl(var(--chart-2))" name="Engagement Score" />
+              <Bar dataKey="artists" fill="hsl(var(--chart-1))" name="Artistas" />
+              <Bar dataKey="engagement" fill="hsl(var(--chart-2))" name="Pontuação de Engajamento" />
             </BarChart>
           </ResponsiveContainer>
         </div>

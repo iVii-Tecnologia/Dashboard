@@ -13,7 +13,7 @@ export function MusicPlayer() {
   const [isMuted, setIsMuted] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Simulate progress when playing
+  // Simular progresso quando tocando
   useEffect(() => {
     let interval: NodeJS.Timeout;
     
@@ -42,7 +42,7 @@ export function MusicPlayer() {
     return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
   };
 
-  // Calculate current time based on progress and duration
+  // Calcular tempo atual baseado no progresso e duração
   const durationParts = currentTrack.duration.split(':');
   const durationInSeconds = parseInt(durationParts[0]) * 60 + parseInt(durationParts[1]);
   const currentTimeInSeconds = (progress / 100) * durationInSeconds;
@@ -50,7 +50,7 @@ export function MusicPlayer() {
   return (
     <div className={`border-t bg-card p-2 transition-all ${isExpanded ? 'h-96' : 'h-20'}`}>
       <div className="flex items-center h-full">
-        {/* Album art and track info */}
+        {/* Arte do álbum e informações da faixa */}
         <div className="flex items-center space-x-4 w-1/4">
           <div 
             className={`bg-cover bg-center rounded ${isExpanded ? 'h-32 w-32' : 'h-14 w-14'}`}
@@ -62,7 +62,7 @@ export function MusicPlayer() {
           </div>
         </div>
 
-        {/* Player controls */}
+        {/* Controles do player */}
         <div className="flex flex-col items-center justify-center flex-1 px-4 space-y-2">
           <div className="flex items-center space-x-4">
             <Button variant="ghost" size="icon">
@@ -98,7 +98,7 @@ export function MusicPlayer() {
           </div>
         </div>
 
-        {/* Volume and expand controls */}
+        {/* Controles de volume e expansão */}
         <div className="flex items-center space-x-4 w-1/4 justify-end pr-4">
           <div className="flex items-center space-x-2">
             <Button 

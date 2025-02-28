@@ -9,43 +9,43 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 const routes = [
   {
-    label: "Dashboard",
+    label: "Painel de Controle",
     icon: LayoutDashboard,
     href: "/",
     color: "text-primary",
   },
   {
-    label: "Artist Discovery",
+    label: "Descobrir Artistas",
     icon: Users,
     href: "/artists",
     color: "text-primary",
   },
   {
-    label: "Music Library",
+    label: "Biblioteca de Músicas",
     icon: Music2,
     href: "/music",
     color: "text-primary",
   },
   {
-    label: "Lyrics Library",
+    label: "Biblioteca de Letras",
     icon: Mic2,
     href: "/lyrics",
     color: "text-primary",
   },
   {
-    label: "Trends & Analytics",
+    label: "Tendências e Análises",
     icon: BarChart3,
     href: "/analytics",
     color: "text-primary",
   },
   {
-    label: "Collaborations",
+    label: "Colaborações",
     icon: Handshake,
     href: "/collaborations",
     color: "text-primary",
   },
   {
-    label: "Settings",
+    label: "Configurações",
     icon: Settings,
     href: "/settings",
     color: "text-muted-foreground",
@@ -87,7 +87,7 @@ export function Sidebar() {
       <div className="px-3 py-2">
         <Button variant="ghost" className="w-full justify-start text-muted-foreground">
           <LogOut className="h-5 w-5 mr-3" />
-          Logout
+          Sair
         </Button>
       </div>
     </div>
